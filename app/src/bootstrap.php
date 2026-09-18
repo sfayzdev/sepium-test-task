@@ -10,10 +10,10 @@ function db()
         return $connection;
     }
 
-    $host = getenv('DB_HOST') ?: '127.0.0.1';
+    $host = getenv('DB_HOST') ?: 'db';
     $name = getenv('DB_NAME') ?: 'catalog_demo';
-    $user = getenv('DB_USER') ?: 'root';
-    $password = getenv('DB_PASSWORD') !== false ? getenv('DB_PASSWORD') : '';
+    $user = getenv('DB_USER') ?: 'catalog_user';
+    $password = getenv('DB_PASSWORD') ?: 'catalog_password';
 
     $dsn = 'mysql:host=' . $host . ';dbname=' . $name . ';charset=utf8mb4';
     $connection = new PDO($dsn, $user, $password, array(
